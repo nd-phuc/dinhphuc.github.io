@@ -1,0 +1,689 @@
+<body style="width:960px; margin-left: auto;margin-right:auto;margin-top:10px;">
+
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: "Open Sans","Roboto",sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+            position: relative;
+        }
+        .cv-top-header {
+            background-color: #13B1CA;
+            height: 25px;
+            border-bottom: 1px solid #7AD3E1;
+        }
+
+            .cv-top-header img {
+                width: 100%;
+            }
+
+        .cv-header {
+            border-top: 1px solid #36BDD3;
+            border-bottom: 1px solid #86D8E4;
+            background-color: #13B1CA;
+            height: 60px;
+            color: #fff;
+            position: relative;
+        }
+
+        #facebook_0 {
+            right: 120px;
+            top: 0;
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            z-index: 180;
+        }
+
+        #gmail {
+            right: 100px;
+            top: 0;
+            position: absolute;
+            width: 13px;
+            height: 12px;
+            z-index: 181;
+        }
+
+        #download {
+            right: 80px;
+            top: 0;
+            position: absolute;
+            width: 11px;
+            height: 12px;
+            z-index: 181;
+        }
+
+        #DDP img {
+            width: 20%;
+            height: auto;
+        }
+
+        #DDP {
+            left: 80px;
+            top: 10px;
+            position: absolute;
+            /*width: 67px;
+            height: 49px;*/
+            z-index: 11;
+        }
+
+        .profile-table img {
+            width: 18px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .cv-info {
+            text-align: center;
+            position: absolute;
+            bottom: 15px;
+            left: 180px;
+            padding-bottom: 15px;
+        }
+
+            .cv-info span {
+                margin-right: 20px;
+            }
+
+        .cv-container {
+            margin: 0 auto;
+            box-shadow: 0 0 1px rgba(0,0,0,.25);
+            background-color: #fff;
+            position: relative;
+        }
+
+        .cv-left-block {
+            width: 284px;
+            float: left;
+        }
+
+        .cv-right-block {
+            float: left;
+        }
+
+        .cv-profile,
+        .avatar-wraper {
+            padding-top: 3mm;
+            display: block;
+            height: 255px;
+        }
+
+        .avatar-wraper {
+            text-align: center;
+        }
+
+        .cv-profile {
+            border-bottom: 2px solid #13B1CA;
+            margin-bottom: 20px;
+        }
+
+        .cv-block {
+            padding-bottom: .7cm;
+            padding-left: 40px;
+            padding-right: 20px;
+        }
+
+        .cv-block-title {
+            color: #000;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .cv-left-block .cv-block {
+            padding: 20px;
+            text-align: center;
+            /*color: #fff;*/
+        }
+
+        .cv-job-expected-container {
+            background-color: #1B5D8D;
+        }
+
+            .cv-job-expected-container .cv-block,
+            .cv-qualification {
+                color: #fff;
+            }
+
+        .cv-left-block .cv-block .items-table > div {
+            margin-bottom: 15px;
+        }
+
+            .cv-left-block .cv-block .items-table > div:last-child {
+                margin-bottom: 0;
+            }
+
+        .acvitity-name,
+        .honor-item {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .cv-arrow-container {
+            position: relative;
+            z-index: 200;
+        }
+
+        .cv-arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 142px solid transparent;
+            border-right: 142px solid transparent;
+            border-top: 100px solid #fff;
+        }
+
+            .cv-arrow-down.job-expected {
+                border-top-color: #1B5D8D;
+            }
+
+            .cv-arrow-down.qualification {
+                border-top-color: #12B2CA;
+            }
+
+        .cv-qualification-container {
+            background-color: #13B1CA;
+            position: relative;
+            z-index: 199;
+            top: -80px;
+        }
+
+        .cv-others-container {
+            background-color: #E3E3E3;
+            color: #313131;
+            position: relative;
+            z-index: 199;
+            top: -160px;
+        }
+
+        .cv-honor.cv-block {
+            background-color: #D6D6D6;
+            color: #313131;
+        }
+
+        .cv-hobbi.cv-block {
+            background-color: #E3E3E3;
+            color: #313131;
+        }
+
+        .cv-reference.cv-block {
+            background-color: #D6D6D6;
+            color: #313131;
+        }
+
+        .cv-left-block .cv-block-title {
+            color: #fff !important;
+        }
+
+        .cv-left-block .cv-social-activity.cv-block .cv-block-title,
+        .cv-left-block .cv-honor.cv-block .cv-block-title,
+        .cv-left-block .cv-hobbi.cv-block .cv-block-title,
+        .cv-left-block .cv-reference.cv-block .cv-block-title {
+            color: #303030 !important;
+            font-size: 18px;
+            padding: 0 20px;
+        }
+
+        .cv-left-block .cv-block-title > span {
+            border: none;
+        }
+
+
+        .cv-right-block .cv-block-title > span {
+            border-bottom: 1pt solid #f03976;
+            color: #f03976;
+        }
+
+        .cv-block table {
+            width: 100%;
+        }
+
+            /*.items-table {
+            border-bottom: 1px dashed #c6c6c6;
+        }*/
+
+            .cv-block table tr {
+                /*border-bottom: 1px dashed #c6c6c6;*/
+            }
+
+        .items-table-item.education-item {
+            margin-top: 20px;
+            border: 1px solid #f03976;
+            padding: 10px;
+        }
+
+        .item-duration {
+            width: 30%;
+            border-bottom: 1px dashed #c6c6c6;
+        }
+
+        .item-content {
+            /*border-bottom: 1px dashed #c6c6c6;*/
+        }
+
+        .item-label.secondary {
+            margin-left: 30%;
+        }
+
+        .item-value {
+            font-weight: bold;
+        }
+
+            .item-value.description {
+                font-weight: normal;
+                font-style: italic;
+            }
+
+        .profile-table td {
+            padding: .1cm;
+            line-height: 14pt;
+            vertical-align: middle;
+        }
+
+            .profile-table td span {
+                line-height: 2em;
+            }
+
+
+        img#profile-avatar {
+            margin-top: 40px;
+            border-radius: 210px;
+            height: 210px;
+            width: 210px;
+        }
+
+        span#profile-fullname {
+            display: block;
+            font-size: 36px;
+            font-weight: 700;
+            color: #f03976;
+            text-transform: uppercase;
+        }
+
+        span.profile-label {
+            display: inline-block;
+            width: 2.8cm;
+            font-weight: 700;
+            font-style: normal;
+            vertical-align: top;
+        }
+
+        span.profile-field {
+            display: inline-block;
+            min-width: 3cm;
+            max-width: 8.7cm;
+        }
+
+
+
+        .cvo-education-time {
+            padding: 1mm 0;
+            width: 5cm;
+            float: left;
+        }
+
+        .education-table .row {
+            border-bottom: .05cm solid #eee;
+            line-height: 15pt;
+            padding: .15cm 0;
+        }
+
+        .school {
+            width: 70%;
+            display: inline-block;
+        }
+
+        .cvo-education-school {
+            font-weight: 700;
+            min-width: 5cm;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .last-table-item {
+            margin-bottom: 10px;
+        }
+
+        .school span {
+            margin-bottom: 5px;
+        }
+
+        .block-table {
+            /*border-bottom: 1px dashed #c6c6c6;
+            padding: 10px 0;
+            margin: 0 20px;
+            width: calc(100% - 20px);*/
+        }
+
+        .clear-both {
+            clear: both;
+        }
+
+        .skill-item {
+            display: inline-block;
+            width: 50%;
+            padding: 5px 0;
+        }
+
+            .skill-item .dot {
+                display: inline-block;
+                width: 8px;
+                height: 8px;
+                background-color: #13B2CB;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+        .reference-item {
+            text-align: left;
+            padding-left: 30px;
+        }
+
+            .reference-item span {
+                font-weight: bold;
+            }
+
+
+        .cv-ddp-check {
+            padding-top: 20px;
+            padding-left: 25px;
+            position: relative;
+            top: -160px;
+            background-color: #13B1CA;
+            height: 230px;
+            color: #fff !important;
+        }
+
+            .cv-ddp-check .cv-block-title {
+                margin-bottom: 30px;
+            }
+
+            .cv-ddp-check .cv-check-blocktitle {
+                border-bottom: 1pt solid #fff;
+                color: #fff !important;
+            }
+
+            .cv-ddp-check .skill-item .dot {
+                background-color: #fff;
+            }
+
+            .cv-ddp-check .skill-item {
+                width: 100%;
+            }
+    </style>
+
+    <div class="cv-top-header">
+        <div id="facebook_0"><img src="https://ddpheadhunter.vn/common/images/cvonline/facebook_0.png"></div>
+        <div id="gmail"><img src="https://ddpheadhunter.vn/common/images/cvonline/gmail.png"></div>
+        <div id="download"><img src="https://ddpheadhunter.vn/common/images/cvonline/download.png"></div>
+    </div>
+    <div class="cv-header">
+        <div id="DDP"><img src="https://ddpheadhunter.vn/common/images/cvonline/DDP.png"></div>
+        <p class="cv-info">
+            <span>Mã CV: #12213</span>
+            <span>Mã Thành viên DDP Group: #12213</span>
+            <span>Mã các bài test đã tham gia tại DDP: #ABCD</span>
+        </p>
+    </div>
+    <table class="table" style="width: 100%;">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="cv-left-block">
+                        <div class="avatar-wraper" style="text-align: center;">
+                            <img id="profile-avatar" src="https://avatars2.githubusercontent.com/u/41265237?s=460&v=4" value="" alt="avatar" type="image" />
+                        </div>
+                        <div class="cv-job-expected-container">
+                            <div class="cv-arrow-down">
+                            </div>
+                            <div class="cv-job-expected cv-block">
+                                <h3 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">VỊ TRÍ ỨNG TUYỂN</span></h3>
+                                <hr style="width: 100px; background-color: #fff; margin-top: 0;" />
+                                <div class="items-table">
+                                    Full Stack Developer
+                                </div>
+                            </div>
+                            <div class="cv-job-expected cv-block">
+                                <h3 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">MỨC LƯƠNG MONG MUỐN</span></h3>
+                                <hr style="width: 100px; background-color: #fff; margin-top: 0;" />
+                                <div class="items-table">
+                                    2000$ - 5000$
+                                </div>
+                            </div>
+                            <div class="cv-job-expected cv-block">
+                                <h3 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">MỤC TIÊU SỰ NGHIỆP</span></h3>
+                                <hr style="width: 100px; background-color: #fff; margin-top: 0;" />
+                                <div class="items-table">
+                                    Với sự đam mê lập trình, nguyện vọng của tôi là được làm việc ở vị trí lập trình viên .NET trong môi trường năng động, chuyên nghiệp, cởi mở và chú trọng phát triển con người. Từ đó hoàn thiện kiến thức, kỹ năng bản thân, đóng góp nhiều hơn cho công ty.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cv-arrow-container">
+                            <div class="cv-arrow-down job-expected">
+                            </div>
+                        </div>
+                        <div class="cv-qualification-container">
+                            <div class="cv-arrow-down">
+                            </div>
+                            <div class="cv-qualification cv-block">
+                                <h3 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">CÁC CHỨNG CHỈ ĐẠT ĐƯỢC</span></h3>
+                                <hr style="width: 100px; background-color: #fff; margin-top: 0; margin-bottom: 20px;" />
+                                <h4 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">CHỨNG CHỈ CHUYÊN NGÀNH</span></h4>
+                                <div class="items-table">
+                                    
+                                </div>
+                            </div>
+                            <div class="cv-qualification cv-block" style="background-color: #11A2C1; padding: 30px 0;">
+                                <h4 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">CHỨNG CHỈ CÁC KỸ NĂNG</span></h4>
+                                <div class="items-table">
+                                    
+                                </div>
+                            </div>
+                            <div class="cv-qualification cv-block" style="padding-top: 20px;">
+                                <h4 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">CHỨNG CHỈ NGOẠI NGỮ</span></h4>
+                                <div class="items-table">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cv-arrow-container" style="position: relative; top: -80px;">
+                            <div class="cv-arrow-down qualification">
+                            </div>
+                        </div>
+                        <div class="cv-others-container">
+                            <div class="cv-arrow-down">
+                            </div>
+                            <div class="cv-social-activity cv-block">
+                                <h3 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">CÁC HOẠT ĐỘNG XÃ HỘI ĐÃ THỰC HIỆN</span></h3>
+                                <hr style="width: 100px; background-color: #000; margin-top: 0; margin-bottom: 20px;" />
+                                <div class="items-table">
+                                    
+                                </div>
+                            </div>
+                            <div class="cv-honor cv-block">
+                                <h3 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">CÁC GIẢI THƯỞNG ĐẠT ĐƯỢC</span></h3>
+                                <hr style="width: 100px; background-color: #000; margin-top: 0; margin-bottom: 20px;" />
+                                <div class="items-table">
+                                    
+                                </div>
+                            </div>
+                            <div class="cv-hobbi cv-block">
+                                <h3 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">SỞ THÍCH</span></h3>
+                                <hr style="width: 100px; background-color: #000; margin-top: 0; margin-bottom: 20px;" />
+                                <div class="items-table">
+                                    
+                                </div>
+                            </div>
+                            <div class="cv-reference cv-block">
+                                <h3 class="cv-block-title no-border"><span id="cv-job-expected-blocktitle">NGƯỜI THAM CHIẾU</span></h3>
+                                <hr style="width: 100px; background-color: #000; margin-top: 0; margin-bottom: 20px;" />
+                                <div class="items-table">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
+                <td>
+                    <div class="cv-right-block" style="float: left">
+                        <div class="cv-profile cv-block">
+                            <span id="profile-fullname"> Đình Phúc</span>
+                            <table class="profile-table">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="profile-field" id="profile-dob"><img src="https://ddpheadhunter.vn/common/images/cvonline/simpledateofbirthico.png">18/08/1997</span>
+                                        </td>
+                                        <td>
+                                            <span class="profile-field" id="profile-phone"><img src="https://ddpheadhunter.vn/common/images/cvonline/phoneoutline.png">973642632</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="profile-field" id="profile-gender"><img src="https://ddpheadhunter.vn/common/images/cvonline/gender.png">Male</span>
+                                        </td>
+                                        <td>
+                                            <span class="profile-field" id="profile-email"><img src="https://ddpheadhunter.vn/common/images/cvonline/emailiconpngdownload.png">PhucND.zit@gmail.com</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="profile-field" id="profile-address"><img src="https://ddpheadhunter.vn/common/images/cvonline/address.png">Hà Nội</span>
+                                        </td>
+                                        <td>
+                                            <span class="profile-field" id="profile-facebook"><img src="https://ddpheadhunter.vn/common/images/cvonline/facebook.png">fb.com</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="profile-field" id="profile-city"><img src="https://ddpheadhunter.vn/common/images/cvonline/home.png">Quảng Ninh</span>
+                                        </td>
+                                        <td>
+                                            <span class="profile-field" id="profile-bloodtype"><img src="https://ddpheadhunter.vn/common/images/cvonline/bloodtype502462.png">Nhóm máu: O</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="cv-education cv-block">
+                            <h3 class="cv-block-title"><span id="cv-education-blocktitle">TRÌNH ĐỘ HỌC VẤN</span></h3>
+                            <div class="items-table">
+                                <div class='items-table-item education-item'>
+                                        <p class='item-content'>
+                                            <span class='item-label'>Tốt nghiệp trường: </span>
+                                            <span class='item-value'>Học viện kỹ thuật Quân Sự</span>
+                                        </p>
+                                        <p class='item-content'>
+                                            <span class='item-label'>Chuyên ngành: </span>
+                                            <span class='item-value'>Lập trình viên</span>
+                                        </p>
+                                        <p class='item-content'>
+                                            <span class='item-label'>Loại bằng: </span>
+                                            <span class='item-value'>Cử nhân</span>
+                                        </p>
+                                        <p class='item-content'>
+                                            <span class='item-label'>Khóa học:</span>
+                                            <span class='item-value'>04/2019 - 06/2022</span>
+                                        </p>
+                                      </div>
+                            </div>
+                        </div>
+                        <div class="clear-both"></div>
+                        <div class="cv-experience cv-block">
+                            <h3 class="cv-block-title"><span id="cv-experience-blocktitle">Kinh nghiệm làm việc</span></h3>
+                            <div class="items-table">
+                                <div class='items-table-item education-item'>
+                                        <p class='item-content'>
+                                            <span class='item-label'>Tên công ty: </span>
+                                            <span class='item-value'>Rakuten</span>
+                                            <span class='item-label secondary'>Công việc: </span>
+                                            <span class='item-value'>Developer</span>
+                                        </p>
+                                        <p class='item-content'>
+                                            <span class='item-label'>Giai đoạn làm việc:</span>
+                                            <span class='item-value'>04/2019 - 06/2019</span>
+                                        </p>
+                                        <p class='item-content'>
+                                            <span class='item-label'>Báo cáo: </span>
+                                            <span class='item-value'></span>
+                                        </p>
+                                        <p class='item-content'>
+                                            <p class='item-label'>Mô tả tóm tắt tổ chức: </p>
+                                            <p class='item-value description'>Rakuten is one of the world's leading internet companies.  Based in Tokyo, we provide consumer and business services in e-commerce, digital content and finance.  With more than 70 services and 12,000 employees worldwide, we are expanding globally with locations throughout Asia, Europe and the Americas.</p>
+                                        </p>
+                                        <p class='item-content'>
+                                            <p class='item-label'>Chi tiết công việc thực hiện: </p>
+                                            <p class='item-value description'>Familiar with ES6 / ES7
+<br/>UI / UX design experience
+<br/>Experience in development and operation of a large scale system
+<br/>Experience in Application Profiling and Performance tuning</p>
+                                        </p>
+                                        <p class='item-content'>
+                                            <span class='item-label'>Phần mềm đã sử dụng: </span>
+                                            <span class='item-value'></span>
+                                        </p>
+                                      </div>
+                            </div>
+                        </div>
+                        <div class="clear-both"></div>
+                        <div class="cv-skill cv-block">
+                            <h3 class="cv-block-title"><span id="cv-skill-blocktitle">CÁC KỸ NĂNG CÓ ĐƯỢC</span></h3>
+                            <div class=block-table skill-table">
+                                <div class='skill-item'><span class='dot'></span><span>c</span></div>
+                            </div>
+                        </div>
+                        <div class="cv-skill cv-block">
+                            <h3 class="cv-block-title"><span id="cv-skill-blocktitle">THÔNG TIN THÊM</span></h3>
+                            <div class="items-table-item education-item" style="height: 115px;">
+                            </div>
+                        </div>
+                        <div class="clear-both"></div>
+                    </div>
+
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <div class="clear-both"></div>
+    <div class="cv-ddp-check">
+        <div class="cv-skill cv-block">
+            <h3 class="cv-block-title"><span class="cv-check-blocktitle">PHẦN KIỂM TRA BỞI DDP HEADHUNTER</span></h3>
+            <div style="width:50%; display:inline-block">
+                <h6 style="font-size:16px;">TEST VỀ CHUYÊN MÔN</h6>
+                <div class="block-table skill-table">
+                    <div class="skill-item">
+                        <span class="dot">
+                        </span><span>Kỹ năng làm việc theo nhóm</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="dot"></span><span>Kỹ năng lãnh đạo</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="dot"></span><span>Kỹ năng giao tiếp</span>
+                    </div>
+                </div>
+            </div>
+            <div style="width:40%; display:inline-block">
+                <h6 style="font-size:16px;">TEST DISC</h6>
+                <div class="block-table skill-table">
+                    <div class="skill-item">
+                        <span class="dot">
+                        </span><span>Kỹ năng làm việc theo nhóm</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="dot"></span><span>Kỹ năng lãnh đạo</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="dot"></span><span>Kỹ năng giao tiếp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
