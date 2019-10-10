@@ -26,7 +26,10 @@
 
         var shift = "";
         var title = "";
-        if (hours >= 0 && hours < 11) {
+        if (hours >= 0 && hours < 4) {
+            shift = "night";
+            title = "Muộn rồi đó bạn </br/> Ngủ đi nào";
+        }else if (hours >= 4 && hours < 11) {
             shift = "morning";
             title = "Dậy thôi giờ này thì không ai ngủ nữa";
         } else if (hours >= 11 && hours < 14) {
@@ -37,7 +40,7 @@
             title = "Buổi chiều cố mà tập trung cho đỡ buồn ngủ";
         } else if (hours >= 18 && hours <= 23) {
             shift = "night";
-            title = "Một ngày vất vả rồi </br> Ngủ thôi nào";
+            title = "Một ngày vất vả rồi <br/> Ngủ thôi nào";
         }
         var url = "https://source.unsplash.com/1600x900/?" + shift;
 
@@ -47,7 +50,7 @@
             arrImg.push(url+'-'+index);
         }  
         debugger
-        $.backstretch(arrImg, {duration: 5000, fade: 750});
+        $.backstretch(arrImg, {duration: 5000, fade: 1000});
         
         ///
         debugger
@@ -55,33 +58,7 @@
     }
 
 
-    function clockUpdate() {
-        var date = new Date();
-
-        function addZero(x) {
-            if (x < 10) {
-                return x = '0' + x;
-            } else {
-                return x;
-            }
-        }
-
-        function twelveHour(x) {
-            if (x > 12) {
-                return x = x - 12;
-            } else if (x == 0) {
-                return x = 12;
-            } else {
-                return x;
-            }
-        }
-
-        var h = addZero(twelveHour(date.getHours()));
-        var m = addZero(date.getMinutes());
-        var s = addZero(date.getSeconds());
-
-        $('.digital-clock').text(h + ':' + m + ':' + s)
-    }
+    
 
     
 
@@ -93,9 +70,7 @@
             e.preventDefault();
             $.backstretch('resize');
         });
-        changeBackgroundAndTitle();
-        clockUpdate();
-        setInterval(clockUpdate, 1000); 
+        changeBackgroundAndTitle(); 
        
     });
 })(jQuery);

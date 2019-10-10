@@ -1,10 +1,10 @@
 
-
 function pad(num, size) {
     var s = num + "";
     while (s.length < size) s = "0" + s;
     return s;
 }
+
 function sleepCaculator(h, m, cycle, timetosleep) {
 
     $("#result").text("");
@@ -46,7 +46,7 @@ function sleepCaculator(h, m, cycle, timetosleep) {
             getuplst = h * 60 + cyc + m + timetosleep - 24 * 60;
         }
 
-        renderSuggest += `<tr> <th scope="row">` + (i + 1) + `</th> <td>` + h + `:` + m + `</td> <td>` + pad(Math.floor(getuplst / 60), 2) + ":" + pad(getuplst % 60, 2) + `</td> <td>` + c * 1.5 + `</td> <td>` + c + `</td> </tr>`;
+        renderSuggest += `<tr> <th scope="row">` + (i + 1) + `</th> <td>` + pad(h,2) + `:` +pad(m,2)  + `</td> <td>` + pad(Math.floor(getuplst / 60), 2) + ":" + pad(getuplst % 60, 2) + `</td> <td>` + c * 1.5 + `</td> <td>` + c + `</td> </tr>`;
         c++;
     }
 
@@ -64,18 +64,41 @@ function process() {
 
 }
 
-function init() {
+
+
+function updateTime(){
     var today = new Date();
-    $("#hour").val(today.getHours());
-    $("#minutes").val(today.getMinutes());
+    $("#hour").val(pad(today.getHours(),2));
+    $("#minutes").val( pad(today.getMinutes(),2));
     process();
+}
+
+
+function clockUpdate() {
+    var date = new Date();
+
+    var h = pad(date.getHours(),2);
+    var m = pad(date.getMinutes(),2);
+    var s = pad(date.getSeconds(),2);
+
+    $('.digital-clock').text(h + ':' + m + ':' + s);  
+
+    if(Number(s)===0){
+        updateTime() ;
+    }
+} 
+function init() {
+    updateTime() 
     $("#btnProcess").click(function () {
         process();
-    })
+    });
 
     $("#hour, #minutes, #timeCycle, #timeToSleep").change(function () {
         process();
-    })
+    });
+    clockUpdate();
+    setInterval(clockUpdate, 1000);  
+  
 }
 //////
 
