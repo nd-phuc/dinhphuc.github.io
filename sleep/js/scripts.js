@@ -20,22 +20,29 @@
     });
 
 
-    function changeBackground() {
+    function changeBackgroundAndTitle() {
         var today = new Date();
         var hours = today.getHours();
 
         var shift = "";
+        var title = "";
         if (hours >= 0 && hours < 11) {
             shift = "morning";
+            title = "Dậy thôi giờ này thì không ai ngủ nữa";
         } else if (hours >= 11 && hours < 14) {
-            shift = "noon"
+            shift = "noon";
+            title = "Buổi trưa thì nghỉ ngơi một tí thôi";
         } else if (hours >= 14 && hours < 18) {
-            shift = "afternoon"
+            shift = "afternoon";
+            title = "Buổi chiều cố mà tập trung cho đỡ buồn ngủ";
         } else if (hours >= 18 && hours < 23) {
-            shift = "night"
+            shift = "night";
+            title = "Một ngày vất vả rồi - Ngủ thôi nào";
         }
         var url = "https://source.unsplash.com/1600x900/?" + shift;
         $.backstretch(url);
+        ///
+        $('.section-title').text(title);
     }
 
 
@@ -92,6 +99,6 @@
             e.preventDefault();
             $.backstretch('resize');
         });
-        changeBackground();
+        changeBackgroundAndTitle();
     });
 })(jQuery);
