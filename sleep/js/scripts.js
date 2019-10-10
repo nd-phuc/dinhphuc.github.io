@@ -35,18 +35,57 @@
         } else if (hours >= 14 && hours < 18) {
             shift = "afternoon";
             title = "Buổi chiều cố mà tập trung cho đỡ buồn ngủ";
-        } else if (hours >= 18 && hours < 23) {
+        } else if (hours >= 18 && hours <= 23) {
             shift = "night";
             title = "Một ngày vất vả rồi </br> Ngủ thôi nào";
         }
         var url = "https://source.unsplash.com/1600x900/?" + shift;
-        $.backstretch(url);
+
+
+        var arrImg =[];
+        for (let index = 0; index < 30; index++) {
+            arrImg.push(url+'-'+index);
+        }  
+        debugger
+        $.backstretch(arrImg, {duration: 5000, fade: 750});
+        
         ///
+        debugger
         $('.section-title').html(title);
     }
 
 
-    $(document).ready(function () { 
+    function clockUpdate() {
+        var date = new Date();
+
+        function addZero(x) {
+            if (x < 10) {
+                return x = '0' + x;
+            } else {
+                return x;
+            }
+        }
+
+        function twelveHour(x) {
+            if (x > 12) {
+                return x = x - 12;
+            } else if (x == 0) {
+                return x = 12;
+            } else {
+                return x;
+            }
+        }
+
+        var h = addZero(twelveHour(date.getHours()));
+        var m = addZero(date.getMinutes());
+        var s = addZero(date.getSeconds());
+
+        $('.digital-clock').text(h + ':' + m + ':' + s)
+    }
+
+    
+
+    $(document).ready(function () {
 
         // Modal
         $('#modal-open, #modal-close').on('click', function (e) {
@@ -55,5 +94,8 @@
             $.backstretch('resize');
         });
         changeBackgroundAndTitle();
+        clockUpdate();
+        setInterval(clockUpdate, 1000); 
+       
     });
 })(jQuery);
