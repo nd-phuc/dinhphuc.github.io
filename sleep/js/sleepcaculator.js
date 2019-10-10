@@ -16,8 +16,8 @@ function sleepCaculator(h, m, cycle, timetosleep) {
         getup = h * 60 + timeCycle + m + timetosleep - 24 * 60;
     }
 
-   var badgeType="success";
-      switch (cycle) {
+    var badgeType = "success";
+    switch (cycle) {
         case 3:
             badgeType = "danger";
             break;
@@ -32,8 +32,8 @@ function sleepCaculator(h, m, cycle, timetosleep) {
             break;
     }
 
-    var s = `<p>Bạn nên thức dậy lúc </p>  <span class="badge badge-`+badgeType+`" style=" font-size: 25px; ">`+pad(Math.floor(getup / 60), 2) + ":" + pad(getup % 60, 2)+`</span>` ;
-  
+    var s = `<p>Bạn nên thức dậy lúc </p>  <span class="badge badge-` + badgeType + `" style=" font-size: 25px; ">` + pad(Math.floor(getup / 60), 2) + ":" + pad(getup % 60, 2) + `</span>`;
+
     $("#result").html(s);
 
 
@@ -46,7 +46,7 @@ function sleepCaculator(h, m, cycle, timetosleep) {
             getuplst = h * 60 + cyc + m + timetosleep - 24 * 60;
         }
 
-        renderSuggest += `<tr> <th scope="row">` + (i + 1) + `</th> <td>` + pad(h,2) + `:` +pad(m,2)  + `</td> <td>` + pad(Math.floor(getuplst / 60), 2) + ":" + pad(getuplst % 60, 2) + `</td> <td>` + c * 1.5 + `</td> <td>` + c + `</td> </tr>`;
+        renderSuggest += `<tr> <th scope="row">` + (i + 1) + `</th> <td>` + pad(h, 2) + `:` + pad(m, 2) + `</td> <td>` + pad(Math.floor(getuplst / 60), 2) + ":" + pad(getuplst % 60, 2) + `</td> <td>` + c * 1.5 + `</td> <td>` + c + `</td> </tr>`;
         c++;
     }
 
@@ -59,17 +59,35 @@ function process() {
     var m = Number($("#minutes").val());
     var cycle = Number($("#timeCycle").val());
     var timetosleep = Number($("#timeToSleep").val());
- 
+    var mess = "";
+
+    if (h > 23) {
+        mess = 'Giờ thì chỉ có max là 23 thôi';
+    }
+    if (h < 0) {
+        mess = 'Giờ thì chỉ có làm gì có âm';
+    }
+    if (m > 59 || timetosleep > 59) {
+        mess = 'Phút thì chỉ có max là 59 thôi';
+    }
+    if (m < 0 || timetosleep < 0) {
+        mess = 'Phút thì chỉ có làm gì có âm';
+    }
+    if (mess !== "") {
+        var s = `<div class="alert alert-danger" role="alert"> ` + mess + ` </div>`
+        $("#result").html(s);
+        return;
+    }
     sleepCaculator(h, m, cycle, timetosleep);
 
 }
 
 
 
-function updateTime(){
+function updateTime() {
     var today = new Date();
-    $("#hour").val(pad(today.getHours(),2));
-    $("#minutes").val( pad(today.getMinutes(),2));
+    $("#hour").val(pad(today.getHours(), 2));
+    $("#minutes").val(pad(today.getMinutes(), 2));
     process();
 }
 
@@ -77,18 +95,18 @@ function updateTime(){
 function clockUpdate() {
     var date = new Date();
 
-    var h = pad(date.getHours(),2);
-    var m = pad(date.getMinutes(),2);
-    var s = pad(date.getSeconds(),2);
+    var h = pad(date.getHours(), 2);
+    var m = pad(date.getMinutes(), 2);
+    var s = pad(date.getSeconds(), 2);
 
-    $('.digital-clock').text(h + ':' + m + ':' + s);  
+    $('.digital-clock').text(h + ':' + m + ':' + s);
 
-    if(Number(s)===0){
-        updateTime() ;
+    if (Number(s) === 0) {
+        updateTime();
     }
-} 
+}
 function init() {
-    updateTime() 
+    updateTime()
     $("#btnProcess").click(function () {
         process();
     });
@@ -97,8 +115,8 @@ function init() {
         process();
     });
     clockUpdate();
-    setInterval(clockUpdate, 1000);  
-  
+    setInterval(clockUpdate, 1000);
+
 }
 //////
 
