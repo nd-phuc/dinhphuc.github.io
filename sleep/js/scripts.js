@@ -49,11 +49,9 @@
         for (let index = 0; index < 30; index++) {
             arrImg.push(url+'-'+index);
         }  
-        debugger
         $.backstretch(arrImg, {duration: 5000, fade: 1000});
         
         ///
-        debugger
         $('.section-title').html(title);
     }
 
