@@ -22,8 +22,7 @@ $(window).on('load', function() {
 
     /*======== Preloader ========*/
     $(".loader").fadeOut();
-    $(".preloader").delay(1000).fadeOut();
-
+    $(".preloader").delay(1000).fadeOut(); 
 
     /*======== Isotope Portfolio Setup ========*/
     if( $('.portfolio-items').length ) {

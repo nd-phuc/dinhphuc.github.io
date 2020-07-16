@@ -1157,6 +1157,8 @@ header .header-mobile {
 .portfolio-section .item a.video-link figure:after {
   content: "\f03d"; }
 
+.portfolio-section .item a.web-link figure:after {
+    content: "\f0ac"; }
 .portfolio-section .item a.audio-link figure:after {
   content: "\f03d"; }
 
