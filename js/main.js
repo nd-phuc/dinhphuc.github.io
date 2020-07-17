@@ -14,7 +14,7 @@ $(window).on('load', function () {
 
     /*======== Preloader ========*/
     $(".loader").fadeOut();
-    $(".preloader").delay(1000).fadeOut();
+    $(".preloader").delay(100).fadeOut();
     $("#old").text(new Date().getFullYear() - 1997);
 
     /*======== Isotope Portfolio Setup ========*/
