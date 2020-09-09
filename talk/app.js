@@ -4,7 +4,7 @@ var app = new Vue({
     isDisabledButton: false,
     recognition: null,
     userName: 'Sauanla',
-    messages: [],
+    messages: [{ name: 'BOT', msg: "Ấn vào và nói gì đó đi 😍", bot: true }],
   },
   methods: {
     say: function (event) {
@@ -26,9 +26,11 @@ var app = new Vue({
       console.log(message);
       this.messages.push(message);
 
-      const els = this.$el.getElementsByClassName('chatbox__messages__user-message');
+      const els = this.$el.getElementsByClassName(
+        'chatbox__messages__user-message'
+      );
       console.log(els);
-      const el = els[els.length-1];
+      const el = els[els.length - 1];
       console.log(el);
       if (el) {
         el.scrollIntoView();
@@ -65,25 +67,24 @@ var app = new Vue({
       }
     },
     scroll(arg) {
-        let el = document.querySelector(arg.to),
-            offset = parseInt(arg.offset) || 0,
-            duration = arg.duration || 800,
-            easing = arg.easing || 'easeOutExpo',
-            callback = arg.callback || null;
+      let el = document.querySelector(arg.to),
+        offset = parseInt(arg.offset) || 0,
+        duration = arg.duration || 800,
+        easing = arg.easing || 'easeOutExpo',
+        callback = arg.callback || null;
 
-        if ( el ) {
-            anime({
-                targets: ['html', 'body'],
-                scrollTop: (el.offsetTop - offset),
-                duration: duration,
-                easing: easing,
-                complete: callback
-            })
-            .finished.then(() => {
-                bus.$emit('scroll:finished', true);
-            });
-        }
-    }
+      if (el) {
+        anime({
+          targets: ['html', 'body'],
+          scrollTop: el.offsetTop - offset,
+          duration: duration,
+          easing: easing,
+          complete: callback,
+        }).finished.then(() => {
+          bus.$emit('scroll:finished', true);
+        });
+      }
+    },
   },
   created() {
     console.log('a');

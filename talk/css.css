@@ -1,24 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Nunito', sans-serif;
+body{
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+  background-size: cover;
 }
 
-html,
-body {
-  background: linear-gradient(120deg, #17bebb, #f0a6ca);
-  overflow: hidden;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-}
 .container h1 {
   margin: 0.5em auto;
   color: #fff;
@@ -27,12 +11,12 @@ body {
 
 .chatbox {
   background: rgba(255, 255, 255, 0.05);
-  width: 600px;
-  height: 75%;
+  height: 70vh;
   border-radius: 0.2em;
   position: relative;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
   overflow-y: scroll;
+  min-height: 200px;
 }
 .chatbox::-webkit-scrollbar {
   display: none;
@@ -52,7 +36,10 @@ body {
 .left{
   float: left;
 }
-
+.col-centered{
+  float: none;
+  margin: 0 auto;
+}
 
 .chatbox__messages__user-message {
   width: auto;
@@ -124,7 +111,6 @@ body {
 }
 .say {
   background: rgba(255, 255, 255, 0.05);
-  width: 600px;
   border-radius: 0.2em;
   position: relative;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
@@ -134,7 +120,7 @@ body {
   background: #c5abc8;
 }
 .say button {
-  background:#34bbbd;
+  background:#34bbbd6b;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -163,3 +149,6 @@ body {
 :-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.9);
 }
+
+
+
