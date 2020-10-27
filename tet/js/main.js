@@ -1,6 +1,6 @@
 ﻿document.addEventListener('DOMContentLoaded', function() {
   let targetDate = new Date(
-    "'01/25/2020 00:00:00 GMT+0700 (SE Asia Standard Time)"
+    "'02/12/2021 00:00:00 GMT+0700 (SE Asia Standard Time)"
   );
   let onStart = () => {
     document
