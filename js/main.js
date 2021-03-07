@@ -16,6 +16,7 @@ $(window).on('load', function () {
     $(".loader").fadeOut();
     $(".preloader").delay(100).fadeOut();
     $("#old").text(new Date().getFullYear() - 1997);
+    $("#experience").text(new Date().getFullYear() - 2018);
 
     /*======== Isotope Portfolio Setup ========*/
     if ($('.portfolio-items').length) {
